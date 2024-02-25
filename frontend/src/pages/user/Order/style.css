@@ -1,0 +1,27 @@
+
+
+.products-name-container{
+    margin-left: 0px;
+}
+.order-main-container{
+    width: 600px;
+    /* background-color: aqua; */
+    padding: 20px;
+    margin: 0px auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+
+
+@media only screen and (max-width: 420px){
+
+    .order-main-container{
+        width: 420px;
+        /* padding: 20px; */
+        margin: 0px auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+    }
+
+}

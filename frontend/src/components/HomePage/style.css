@@ -1,0 +1,119 @@
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+#heading-text{
+   letter-spacing: .1rem;
+    font-size:54px;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 110px;
+    margin-bottom: 20px;
+
+}
+#sub-heading-text{
+    font-size: 38px;
+    letter-spacing: .1rem;
+}
+#paragraph-text{
+    color: rgb(84, 84, 84);
+    font-size: 18px;
+    letter-spacing: .1rem;
+}
+
+.learn-btn{
+    margin-top: 8px;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 16px;
+    border: 1px solid rgb(39, 38, 38);
+}
+
+.learn-btn:hover{
+    background-color: rgb(232, 228, 236);
+}
+.home-img-container{
+    width: 520px;
+}
+.img{
+    width: 100%;
+}
+.text-container{
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+/* CSS for mobile screens */
+@media only screen and (max-width: 420px) {
+    
+
+    .main-container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+
+    .home-img-container{
+        width: 420px;
+        margin-top: 20px;
+     
+    }
+    .text-container{
+        width: 410px;
+        margin: 0px auto;
+        margin-left: 20px;
+        /* pa */
+        /* margin-left: 10px; */
+    }
+    .learn-btn{
+        margin-top: 2px;
+        padding: 8px 13px;
+    font-weight: 600;
+    font-size: 16px;
+    }
+    #paragraph-text{
+        color: rgb(84, 84, 84);
+        font-size: 16px;
+        margin-right: 40px;
+        letter-spacing: .1rem;
+    }
+
+    #heading-text{
+        display: none;
+    }
+    #sub-heading-text{
+        font-size: 32px;
+    }
+    /* Adjust the font size for smaller screens */
+    .title {
+      font-size: 20px;
+    }
+    
+    /* Hide certain elements on mobile */
+    .desktop-only {
+      display: none;
+    }
+  }
+  
+
+  @media (min-width: 576px) and (max-width: 767px) {
+    
+    .main-container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    /* .home-img-container{
+        width: 780px;
+        margin-left: 140px;
+    } */
+  }

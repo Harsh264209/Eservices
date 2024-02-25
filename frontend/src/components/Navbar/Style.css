@@ -1,0 +1,36 @@
+.appbar{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Adjust z-index as needed */
+    /* Additional styling */
+    background-color: #fff; /* Set background color */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+
+
+}
+
+
+@media only screen and (max-width: 576px){
+
+    .register-btn{
+        padding: 4px 12px;
+    }
+    .login-btn{
+        padding: 4px 12px;
+    }
+    .appbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 40px; */
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    
+    }
+}

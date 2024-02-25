@@ -1,0 +1,36 @@
+
+.img-input{
+    border: 2px dotted rgb(0, 0, 0);
+    padding: 22px 8px;
+    margin: 0px auto;
+    width: 40%;
+    margin-bottom: 8px;
+}
+.add-course-container{
+    width: 500px;
+    margin: 0px auto;
+
+    
+}
+.input{
+    width: 100%;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 16px 18px;
+    outline: none;
+}
+
+.btn{
+    background-color: black;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 16px 18px;
+}
+.mr{
+    margin-right: 8px;
+}
+.mb{
+    margin-bottom: 4px;
+}

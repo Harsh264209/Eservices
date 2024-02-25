@@ -1,0 +1,11 @@
+
+
+.explore-btn{
+    background-color: rgb(214, 155, 54);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: 700;
+}

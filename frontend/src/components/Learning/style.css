@@ -1,0 +1,66 @@
+
+.main{
+    background-color: lightgrey;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.img-container img{
+    mix-blend-mode: color-burn;
+}
+
+.img-container{
+    width: 450px;
+    /* margin-top: 120px; */
+}
+.img{
+    width: 100%;
+}
+.sub-container-text{
+    font-size: 38px;
+    letter-spacing: .1rem;
+}
+.learning-btn{
+    background-color: rgb(214, 155, 54);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.learning-btn:hover{
+    background-color: blueviolet;
+}
+.learning-text-container{
+
+    margin-top: 50px;
+
+}
+
+@media only screen and (max-width: 420px) {
+
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+    .learning-btn{
+        padding: 8px 13px;
+        margin-top: -4px;
+        margin-bottom: 20px;
+    }
+    .img-container{
+        width: 360px;
+        margin-left: -50px;
+        /* margin-top: 120px; */
+    }
+    .learning-text-container{
+
+        margin-top: -80px;
+        margin-left: 20px;
+
+    }
+}
