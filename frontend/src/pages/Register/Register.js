@@ -24,8 +24,8 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        WayWonder
+      <Link color="inherit" href="/">
+        LearnHub
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -125,24 +125,29 @@ const Register = () => {
                   id="password"
                   autoComplete="new-password"
                 />
-                <TextField
+               <Grid item xs={12} sx={{mt:2}}>
+               <TextField
                   required
                   fullWidth
                   name="answer"
                   value={formData.answer}
             onChange={handleChange}
-                  label="Enter Your answer"
+                  label="Nick Name"
                   type="text"
                   id="answer"
                   autoComplete="new-password"
                 />
+               </Grid>
+               <Typography sx={{mt:1,color:'#989696'}}>
+                Nick Name will help you to recover your forgotted password
+               </Typography>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox value="allowExtraEmails" color="primary" />}
                   label="I want to receive inspiration, marketing promotions and updates via email."
                 />
-              </Grid>
+              </Grid> */}
             </Grid>
             <Button
               type="submit"

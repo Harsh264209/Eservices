@@ -27,7 +27,7 @@ function UpdateCourseModal({ open, handleClose, course, fetchCourses }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/category/', {
+        const response = await axios.get('https://learnhub-eservices.onrender.com/api/category/', {
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization':auth?.token
@@ -71,7 +71,7 @@ function UpdateCourseModal({ open, handleClose, course, fetchCourses }) {
       formDataToUpdate.append('category', formData.category);
       formDataToUpdate.append('img', formData.img); // Append img file to FormData
 
-      await axios.put(`http://localhost:5000/api/course/${course._id}`, formDataToUpdate, {
+      await axios.put(`https://learnhub-eservices.onrender.com/api/course/${course._id}`, formDataToUpdate, {
         headers: {
           'Content-Type': 'multipart/form-data', // Use multipart/form-data for file upload
           'Authorization': auth?.token

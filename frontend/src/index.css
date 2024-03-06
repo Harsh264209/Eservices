@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0px;
@@ -5,6 +6,12 @@ body {
     padding-right: 0 !important;
     width:100% !important;
     height: 100% !important;
+
+    .poppins-regular {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
     /* overflow: visible !important; */
 
 

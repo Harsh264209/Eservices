@@ -2,6 +2,7 @@ import React from 'react';
 import style from './style.css'
 import { useCart} from '../../Context/CartContext';
 import CartNavbar from '../../components/Navbar/CartNavbar'
+import { useEffect } from 'react';
 import { useNavigate ,Link} from 'react-router-dom';
 
 const Cart = () => {
@@ -34,6 +35,9 @@ console.log(cart)
     }
   };
   
+  useEffect(() => {
+    document.title = "LearnHub-Cart"; // Set title for about page
+  }, []);
 
   const Navigate=useNavigate()
 
@@ -52,7 +56,7 @@ console.log(cart)
           <div>
             {filteredCart.map((item) => (
 
-item !== null &&(     <div key={item.id} className='cart-card'>
+item !== null &&(     <div key={item._id} className='cart-card'>
 <div style={{display:"flex"}}>
   <img className='cart-img' src={`https://learnhub-eservices.onrender.com/api/course/product-photo/${item._id}`} style={{width:"120px"}} alt="" />
   <div className="div" style={{marginLeft:"10px"}}>

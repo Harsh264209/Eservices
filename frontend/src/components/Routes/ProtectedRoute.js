@@ -36,6 +36,6 @@ export default function PrivateRoute() {
   }, [auth?.token]);
 
   // Conditionally render Outlet if authentication is successful, otherwise render Spinner
-  return success ? <Outlet /> : <Spinner />;
+  return success ? <Outlet /> : <Spinner /> ;
 }
 

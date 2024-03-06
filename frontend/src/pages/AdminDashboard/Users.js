@@ -16,7 +16,7 @@ const AllUsersComponent = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/user/users',{
+        const response = await axios.get('https://learnhub-eservices.onrender.com/api/user/users',{
           headers:{
             'Content-Type':'appliaction/json',
             'Authorization':auth?.token

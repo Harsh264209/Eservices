@@ -283,6 +283,7 @@
 
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+// import {Link} from 'react-scroll'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import {  Box, IconButton, Menu, MenuItem, Typography } from '@mui/material';
@@ -310,7 +311,7 @@ const ExploreNavbar = () => {
     setValues({ ...values, keyword: event.target.value });
   };
 
-  const pages = ['Home', 'About', 'Blog', 'Contact']; // Define your pages here
+  const pages = ['Home', 'About', 'Blog',]; // Define your pages here
 
   return (
     <div className="nav-container">
@@ -327,6 +328,7 @@ const ExploreNavbar = () => {
               letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
+              fontFamily:'Poppins',
               marginLeft:{xs: 'none', md: '50px' }
             }}
           >
@@ -361,7 +363,7 @@ const ExploreNavbar = () => {
         >
           {pages.map((page) => (
             <MenuItem key={page} onClick={handleCloseNavMenu} component={Link} to={`/${page.toLowerCase()}`}>
-              <Typography textAlign="center">{page}</Typography>
+              <Typography textAlign="center" sx={{fontFamily:'Poppins'}}>{page}</Typography>
             </MenuItem>
           ))}
         </Menu>
@@ -395,7 +397,7 @@ const ExploreNavbar = () => {
                 to={`/${page.toLowerCase()}`}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                {page}
+               <Typography sx={{fontFamily:'Poppins'}}> {page}</Typography>
               </Button>
             ))}
           </Box>
@@ -424,29 +426,7 @@ const ExploreNavbar = () => {
             </IconButton>
           </Badge>
         </div>
-      </Box>
-
-{/* 
-      <div className="search-container">
-        <input
-          type="text"
-          className="nav-input"
-          placeholder="Search"
-          value={values.keyword}
-          onChange={handleSearchChange}
-        />
-        <button className="nav-search-btn">Search</button>
-      </div>
-
-      <div className="nav-cart">
-        <Badge count={cart.length}>
-          <IconButton component={Link} to="/cart" color="inherit">
-            <ShoppingCartOutlinedIcon />
-          </IconButton>
-        </Badge>
-      </div> */}
-
-     
+      </Box> 
     </div>
   );
 };

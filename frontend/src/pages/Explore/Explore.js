@@ -1,15 +1,13 @@
 
-
-
 import React, { useState, useEffect } from 'react';
 import ExploreNavbar from '../../components/Navbar/ExploreNavbar/ExploreNavbar';
 import Card from '../../components/Card/Card';
 import CategoryList from './FetchCategoryComponent/FetchCategory';
-import Carousel from '../../components/carousel/Carousel'
 import axios from 'axios';
 import Footer from '../../components/Footer/Footer'
 import img from '../../Images/image1.png'
 import './style.css'; // Import the CSS file for styling
+import Spinner from '../../components/Spinner/Spinner';
 
 const Explore = () => {
   const [cardsData, setCardsData] = useState([]);
@@ -47,12 +45,17 @@ const Explore = () => {
     }
   };
 
+  useEffect(() => {
+    document.title = "LearnHub-Explore"; // Set title for about page
+  }, []);
+
+
   return (
     <>
       <ExploreNavbar />
       <div className="explore-hero-container">
         <div className="explore-text-container">
-         <h1 className='explore-text-container-heading'><span className='explore-heading'> Discover Your Path:</span> <br/>  <span className='explore-sub-heading'>Browse Our Array of <br/>Online Learning Opportunities</span></h1>
+         <h1 className='explore-text-container-heading'><span className='explore-heading highlighted-text '> Discover Your Path:</span> <br/>  <span className='explore-sub-heading'>Browse Our Array of <br/>Online Learning Opportunities</span></h1>
          <p className='explore-text-container-paragraph' style={{marginTop:'30px',color:'8f8b8b'}}>Embark on a journey of personal and professional growth with our diverse selection<br/> of online courses. Whether you're looking to enhance your skills, pursue a new passion,<br/> or advance your career,our platform offers a wealth of opportunities tailored to your needs. <br/> From digital marketing to creative writing, programming to mindfulness,our expertly <br/> crafted courses are designed to empower you to thrive in an ever-evolving world.<br/>  Explore our catalog today and unlock the doors to endless possibilities.</p>
         </div>
         <div className="explore-img-container">
@@ -61,7 +64,7 @@ const Explore = () => {
         </div>
       </div>
       <div className="Heading-text">
-        <h1>All the skills you need in one place</h1>
+        <h1 style={{fontFamily:'Poppins',fontWeight:'500'}}>All the skills you <span className='highlighted-text'> need in one place</span></h1>
         <p className='p-text'>From critical workplace skills to technical topics, our catalog supports well-rounded professional development.</p>
       </div>
       <div className="category-list" style={{ marginTop: '20px' }}>
@@ -70,7 +73,8 @@ const Explore = () => {
       </div>
       <div className="explore-container">
         {loading ? (
-          <p>Loading...</p>
+          <p style={{marginLeft:'30px'}}><Spinner/></p>
+
         ) : (
           cardsData.map(card => (
             <Card
@@ -86,7 +90,10 @@ const Explore = () => {
           ))
         )}
       </div>
+      <div className="div" id='footer'>
       <Footer />
+      </div>
+     
     </>
   );
 };

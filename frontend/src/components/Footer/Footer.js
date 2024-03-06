@@ -14,7 +14,14 @@ const Footer = () => {
      </div>
      <hr/>
      <div className="pages-container">
-      <ul style={{listStyle:'none',fontSize:'14px'}}>
+      <ul style={{listStyle:'none',fontSize:'14px',display:'flex'}}>
+        <a href="/contact" className='link'> <li>Contact Us</li></a>
+        <a href="/about" className='link'> <li>About Us</li></a>
+        <a href="/" className='link' ><li>LearnHub</li></a>
+        <a href="/blog" className='link'><li>Blog</li></a>
+        
+      </ul>
+      {/* <ul style={{listStyle:'none',marginLeft:'65px',fontSize:'14px'}}>
       <li>Contact Us</li>
         <li>About Us</li>
         <li>LearnHub</li>
@@ -25,13 +32,7 @@ const Footer = () => {
         <li>About Us</li>
         <li>LearnHub</li>
         <li>Blog</li>
-      </ul>
-      <ul style={{listStyle:'none',marginLeft:'65px',fontSize:'14px'}}>
-      <li>Contact Us</li>
-        <li>About Us</li>
-        <li>LearnHub</li>
-        <li>Blog</li>
-      </ul>
+      </ul> */}
      </div>
      <div className="bottom-container">
       <h2 className='footer-logo'>LearnHub</h2>

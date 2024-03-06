@@ -4,8 +4,14 @@
     display: flex;
     align-items: center;
     width: 100%;
+    position:sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 9999;
+    bottom: 2;
     /* height: 80px; */
-    padding: 10px;
+    padding: 4px;
     /* color: white; */
     /* background-color: rgb(208, 202, 202); */
 
@@ -46,6 +52,7 @@ li:hover{
     padding: 6px 14px;
     border-radius: 12px 0px 0px 12px;
     border: 1px solid lightgrey;
+    font-family: Poppins;
 }
 .nav-search-btn{
     background-color: rgb(97, 95, 95);
@@ -53,6 +60,7 @@ li:hover{
     border-radius: 0px 12px 12px 0px;
     padding: 6px 14px;
     border: none;
+    font-family: Poppins;
 }
 
 .link{
@@ -75,6 +83,9 @@ li:hover{
       margin-right:110px !important ;
       margin-left: -30px !important;
     }
+    .nav-container{
+        padding: 10px;
+    }
     .nav-search-btn{
       background-color: rgb(97, 95, 95);
       color: white;
@@ -83,6 +94,7 @@ li:hover{
       padding: 6px 8px;
       border: none;
       display: block;
+      font-family: none;
   }
   .nav-cart{
     margin-left:-100px ;

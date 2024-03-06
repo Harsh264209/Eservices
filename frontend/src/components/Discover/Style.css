@@ -10,6 +10,7 @@
 .discover-text-container{
  margin-left: 20px;
  margin-top: 40px;
+ /* font-family: "Poppins", sans-serif; */
 
 }
 .discover-img-container{
@@ -28,14 +29,17 @@
     font-size: 16px;
     font-weight: 700;
     margin-top: 50px;
+    font-family: "Poppins", sans-serif;
 }
 #p-text{
     margin-top: 40px;
     font-size: 18px;
     color: rgb(51, 49, 49);
+    font-family: "Poppins", sans-serif;
 }
 #sub-text{
     font-size: 38px;
+    font-family: "Poppins", sans-serif;
 }
 .discover-btn:hover{
     background-color: rgb(232, 228, 236);

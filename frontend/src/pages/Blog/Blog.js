@@ -2,10 +2,16 @@
 
 import React from 'react'
 import Blognavbar from './BlogNavbar'
+import { useEffect } from 'react'
+
 import style from './style.css'
+import Footer from '../../components/Footer/Footer'
 import image1 from '../../Images/e-image.png'
 
 const Blog = () => {
+  useEffect(() => {
+    document.title = "LearnHub-Blog"; // Set title for about page
+  }, []);
   return (
     <div className='blog-main-container'>
         <Blognavbar/>
@@ -18,6 +24,7 @@ const Blog = () => {
           <img className='blog-hero-img' src={image1} alt="" />
         </div>
        </div>
+       <Footer/>
     </div>
   )
 }

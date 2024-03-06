@@ -26,6 +26,7 @@ import Blog from './pages/Blog/Blog';
 import About from './pages/About/About';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import HomePage from './components/HomePage/HomePage';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 const ProtectedRoute = ({ element }) => {
   const { isAuthenticated } = useUserAuth(); // Add your authentication logic
@@ -57,7 +58,6 @@ function App() {
         <Route exact path='/dashboard' element={<AdminRoute/>}>
         <Route exact path='admin' element={<AdminDashboard/>} />
         <Route exact path='admin/create-course' element={<CreateCourse/>} />
-        {/* <Route exact path='admin' element={<AdminDashboard/>} /> */}
 
         </Route>
         <Route exact path='/forgot-password' element={<ForgotPassword />} />
@@ -67,6 +67,9 @@ function App() {
         <Route exact path='/cart' element={<Cart />} />
         <Route exact path='/checkout' element={<Checkout/>} />
         <Route exact path='/order-success' element={<OrderSuccess/>} />
+        <Route exact path='*' element={<PageNotFound/>} />
+
+       
       
       </Routes>
       <Toaster

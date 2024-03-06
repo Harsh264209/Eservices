@@ -92,7 +92,6 @@ export default function Dashboard() {
   // Map of list items to render specific components
   const mainListItems = [
     { text: 'Orders', component: <AllOrdersComponent /> },
-
     { text: 'Users', component: <CustomersComponent /> },
     { text: 'Courses', component: <ProductComponent /> },
     { text: 'Create Product', component: <CreateProductComponent /> },
@@ -131,11 +130,7 @@ export default function Dashboard() {
             >
               Admin Dashboard
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+           
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>

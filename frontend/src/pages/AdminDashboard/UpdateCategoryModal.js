@@ -28,7 +28,7 @@ function UpdateCategoryModal({ open, handleClose, category, fetchCategories }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/category/${category._id}`, { name }, {
+      await axios.put(`https://learnhub-eservices.onrender.com/api/category/${category._id}`, { name }, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': auth?.token

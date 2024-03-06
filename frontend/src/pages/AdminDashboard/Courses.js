@@ -110,7 +110,7 @@ function GetAllCourses() {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/course/all', {
+      const response = await axios.get('https://learnhub-eservices.onrender.com/api/course/all', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': auth?.token
@@ -141,7 +141,7 @@ function GetAllCourses() {
         console.error('Course ID is undefined');
         return;
       }
-      await axios.delete(`http://localhost:5000/api/course/${id}`, {
+      await axios.delete(`https://learnhub-eservices.onrender.com/api/course/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': auth?.token

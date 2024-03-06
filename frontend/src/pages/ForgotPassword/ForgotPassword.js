@@ -23,8 +23,8 @@ function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          WayWonder
+        <Link color="inherit" href="/">
+         LearnHub
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}
@@ -77,7 +77,7 @@ const ForgotPassword = () => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+            backgroundImage: 'url(https://source.unsplash.com/random?courses)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -121,7 +121,7 @@ const ForgotPassword = () => {
                 name="answer"
                 value={formData.answer}
            onChange={handleChange}
-                label="Your Answer"
+                label="Nick Name"
                 type="text"
                 id="answer"
                 autoComplete="current-answer"

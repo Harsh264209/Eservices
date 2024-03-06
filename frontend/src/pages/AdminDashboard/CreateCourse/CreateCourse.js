@@ -23,7 +23,7 @@ function CourseComponent() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/category/',{
+        const response = await axios.get('https://learnhub-eservices.onrender.com/api/category/',{
           headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization':auth?.token

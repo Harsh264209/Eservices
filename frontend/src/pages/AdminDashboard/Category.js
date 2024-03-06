@@ -20,7 +20,7 @@ function GetAllCategories() {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/category/', {
+      const response = await axios.get('https://learnhub-eservices.onrender.com/api/category/', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': auth?.token
@@ -47,7 +47,7 @@ function GetAllCategories() {
   
   const handleDelete = async (categoryId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/category/${categoryId}`, {
+      await axios.delete(`https://learnhub-eservices.onrender.com/api/category/${categoryId}`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': auth?.token

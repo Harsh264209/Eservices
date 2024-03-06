@@ -1,110 +1,5 @@
 
 
-// UserAuthProvider.js
-// import { createContext, useContext, useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { useCartContext } from '../Context/CartContext';
-
-// const UserAuthContext = createContext();
-
-// export const UserAuthProvider = ({ children }) => {
-
-
-// // Retrieving stored user from localStorage
-// // const storedUser = localStorage.getItem('user');
-// // // Parsing the stored user if it exists, otherwise setting it to null
-// // const initialUserState = storedUser ? JSON.parse(storedUser) : null;
-
-// // Using useState hook with initial state
-// const [auth, setAuth] = useState({
-//   user:null,
-//   token:""
-// })
-
-// axios.defaults.headers.common["Authorization"]=auth?.token
-
-//   useEffect(() => {
-  
-//       const data=localStorage.getItem('auth');
-
-//       if(data){
-//         const parseData=JSON.parse(data)
-//           setAuth({...auth,
-//           user:parseData.user,
-//           token:parseData.token
-//         })
-//       }
-//     //eslint-disable-next-line
-//   }, []);
-
-//   const register = async (formData, navigate) => {
-//     try {
-//       const response = await axios.post('http://localhost:5000/api/user/register', formData);
-//       setAuth(response.data.user);
-//       navigate('/login');
-//     } catch (error) {
-//       console.error('Registration failed', error.response.data);
-//     }
-//   };
-
-  
-
-//   const login = async (formData, navigate) => {
-//     try {
-//       const response = await axios.post('http://localhost:5000/api/user/login', formData);
-  
-//       if (response && response.data && response.data.user) {
-//         setAuth({ user: response.data.user, token: response.data.token });
-//         localStorage.setItem("auth", JSON.stringify(response.data));
-//         // if (response.data.user.role === 'user') {
-//         //   navigate('/');
-//         // } else {
-//         //   navigate('/admin-dashboard');
-//         // }
-//       } else {
-//         console.error('Login failed. Invalid response:', response);
-//       }
-//     } catch (error) {
-//       if (error.response && error.response.data) {
-//         console.error('Login failed', error.response.data);
-//       } else {
-//         console.error('Login failed', error.message);
-//       }
-//     }
-//   };
-
-//   const forgotPassword=async(formData)=>{
-
-//       try {
-//         const response = await axios.post('http://localhost:5000/api/user/forgot-password', formData);
-//       } catch (error) {
-        
-//         if (error.response && error.response.data) {
-//           console.error('Password Reset failed', error.response.data);
-//         } else {
-//           console.error('Password Reset failed', error.message);
-//         }
-//       }
-
-//   }
-  
-
-//   const logout = () => {
-//     setAuth({ user: null, token: "" });
-//     localStorage.removeItem('auth');
-//   };
-
-//   return (
-//     <UserAuthContext.Provider value={{ auth, login, register, logout,forgotPassword }}>
-//       {children}
-//     </UserAuthContext.Provider>
-//   );
-// };
-
-// export const useUserAuth = () => {
-//   return useContext(UserAuthContext);
-// };
-
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
@@ -189,6 +84,7 @@ export const UserAuthProvider = ({ children }) => {
   const forgotPassword = async (formData) => {
     try {
      const {data}= await axios.post('https://learnhub-eservices.onrender.com/api/user/forgot-password', formData);
+     toast.success("Password updated sucessfully");
     } catch (error) {
       console.log(error)
     }

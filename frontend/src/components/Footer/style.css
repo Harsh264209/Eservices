@@ -33,10 +33,14 @@
 }
 .pages-container{
     display: flex;
+    flex-direction:row;
     margin-left: -30;
 }
 .footer-paragraph-text{
     color: rgb(110, 112, 112);
+}
+.link{
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 420px){

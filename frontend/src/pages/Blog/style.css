@@ -29,6 +29,11 @@
     width: 550px;
 
 }
+.about-hero-text{
+
+    display: flex;
+  flex-direction: row;
+}
 .blog-hero-img-container{
     margin-right: 40px;
 }
@@ -65,5 +70,20 @@
     .blog-hero-img{
         width: 100%;
     
+    }
+    .blog-nav-btn{
+        background-color: black;
+        color: white;
+        display: none;
+        padding: 2px 8px;
+        border: none;
+    }
+    .about-hero-text{
+
+        display: flex;
+        flex-direction: column;
+    }
+    .about-img{
+        margin-left: -70px;
     }
 }

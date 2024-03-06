@@ -7,21 +7,34 @@
 }
 #heading-text{
    letter-spacing: .1rem;
-    font-size:54px;
+    font-size: calc(1.425rem + 2.1vw);
+    line-height: 1.2;
     margin: 0px auto;
     text-align: center;
     margin-top: 110px;
     margin-bottom: 20px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+  font-weight: 600;
 
+}
+
+.wd_highlight1{
+    background-image: linear-gradient(90deg, #ec5454, #f9cb28);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 #sub-heading-text{
     font-size: 38px;
     letter-spacing: .1rem;
+    font-family: "Poppins", sans-serif;
 }
 #paragraph-text{
     color: rgb(84, 84, 84);
     font-size: 18px;
     letter-spacing: .1rem;
+    font-family: "Poppins", sans-serif;
 }
 
 .learn-btn{
@@ -35,7 +48,7 @@
 }
 
 .learn-btn:hover{
-    background-color: rgb(232, 228, 236);
+    background-color: rgb(255, 255, 255);
 }
 .home-img-container{
     width: 520px;

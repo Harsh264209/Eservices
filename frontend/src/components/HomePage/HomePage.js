@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <div>
       {/* <h2>{JSON.stringify(user)}</h2> */}
-       <h1 id='heading-text'>How does LearnHub work?</h1>
+       <h1 id='heading-text'>How does <span className='highlighter- wd_highlight1'>LearnHub work?</span></h1>
        <div className='main-container'>
   
         <div className='home-img-container'>

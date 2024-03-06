@@ -5,13 +5,17 @@ import { useCart } from '../../Context/CartContext';
 import CheckoutNavbar from '../../components/Navbar/CheckoutNavbar';
 import { useNavigate } from 'react-router-dom';
 import ReactAudioPlayer from 'react-audio-player';
-import style from './style.css'
-import {useUserAuth} from '../../Context/UserAuthContext'
+import style from './style.css';
+import { useUserAuth } from '../../Context/UserAuthContext';
+
+// Import your audio file
+import paymentSuccessAudio from '../../Images/Phone_pay_audio.mp3';
 
 const Checkout = () => {
-    const [cart,setCart] = useCart();
-    const{auth}=useUserAuth()
+    const [cart, setCart] = useCart();
+    const { auth } = useUserAuth();
     const [orderId, setOrderId] = useState(null);
+    const [isPaymentSuccess, setIsPaymentSuccess] = useState(false);
     const Navigate = useNavigate();
 
     const totalPrice = () => {
@@ -22,17 +26,21 @@ const Checkout = () => {
         return total;
     };
 
-
     const handlePaymentSuccess = (paymentId) => {
         console.log('Payment successful. Payment ID:', paymentId);
+        setIsPaymentSuccess(true);
+        console.log(isPaymentSuccess)
         Navigate('/order-success');
-              setCart([]);
-              localStorage.removeItem('cart');
+        setCart([]);
+        localStorage.removeItem('cart');
     };
+
+
+    console.log(isPaymentSuccess)
 
     const handlePaymentError = (error) => {
         console.error('Payment failed:', error);
-    }
+    };
 
     const openRazorpayCheckout = async () => {
         try {
@@ -42,30 +50,30 @@ const Checkout = () => {
                 Navigate('/login');
                 return;
             }
-            
+
             const response = await fetch('https://learnhub-eservices.onrender.com/api/course/razorpay/payment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': auth?.token
+                    Authorization: auth?.token,
                 },
                 body: JSON.stringify({
                     amount: totalPrice() * 100,
                     currency: 'INR',
-                    cart:reducedCart,
+                    cart: reducedCart,
                 }),
             });
-    
+
             if (!response.ok) {
                 throw new Error('Failed to generate order');
             }
-    
+
             const data = await response.json();
-            console.log(data)
+            console.log(data);
             setOrderId(data.orderDetails.payment.id);
-    
+
             const options = {
-                key: 'rzp_test_Esl49gVwiFX6Sj',
+                key: 'rzp_test_QIlG8jnI3fJvTp',
                 amount: totalPrice() * 100,
                 currency: 'INR',
                 name: 'LearnHub',
@@ -75,8 +83,8 @@ const Checkout = () => {
                     handlePaymentSuccess(response.razorpay_payment_id);
                 },
                 prefill: {
-                    name:auth.user.username,
-                    email:auth.user.email,
+                    name: auth.user.username,
+                    email: auth.user.email,
                     contact: '1234567890',
                 },
                 theme: {
@@ -88,31 +96,34 @@ const Checkout = () => {
                     },
                 },
             };
-    
+
             const rzp = new window.Razorpay(options);
             rzp.open();
         } catch (error) {
             console.error('Error generating order:', error);
         }
     };
-    
 
     return (
         <>
             <CheckoutNavbar />
-            <div className='checkout-main-container'>
+            <div className="checkout-main-container">
                 <div className="checkout-card">
-                    <h2 className='checkout-heading'>Checkout</h2>
+                    <h2 className="checkout-heading">Checkout</h2>
                     <div>
-                        <h2 className=''>Order details</h2>
+                        <h2>Order details</h2>
                         <div>
                             {cart.map((item) => (
-                                <div key={item.id} className='order-card'>
-                                    <div className="div" style={{ display: "flex" }}>
-                                        <img src={`https://learnhub-eservices.onrender.com/api/course/product-photo/${item._id}`} className='checkout-img' alt="" />
-                                        <p style={{ marginLeft: "10px" }}>{item.title}</p>
+                                <div key={item._id} className="order-card">
+                                    <div className="div" style={{ display: 'flex' }}>
+                                        <img
+                                            src={`https://learnhub-eservices.onrender.com/api/course/product-photo/${item._id}`}
+                                            className="checkout-img"
+                                            alt=""
+                                        />
+                                        <p style={{ marginLeft: '10px' }}>{item.title}</p>
                                     </div>
-                                    <p style={{ marginRight: "120px" }}>₹{item.price}</p>
+                                    <p style={{ marginRight: '120px' }}>₹{item.price}</p>
                                 </div>
                             ))}
                         </div>
@@ -127,19 +138,29 @@ const Checkout = () => {
                         </div>
                         <hr />
                         <div className="price-container">
-                            <h4 >Total:</h4>
+                            <h4>Total:</h4>
                             <p>₹{totalPrice()}</p>
                         </div>
-                        <button className='payment-btn' onClick={openRazorpayCheckout}>Proceed to Pay</button>
+                        <button className="payment-btn" onClick={openRazorpayCheckout}>
+                            Proceed to Pay
+                        </button>
                     </div>
                 </div>
             </div>
+            {/* Render audio player if payment is successful */}
+            {/* L{isPaymentSuccess && <ReactAudioPlayer src={paymentSuccessAudio} autoPlay controls />} */}
+
+            {isPaymentSuccess && (
+                <audio autoPlay controls>
+                    <source src={paymentSuccessAudio} type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            )}
         </>
     );
 };
 
 export default Checkout;
-
 
 
 

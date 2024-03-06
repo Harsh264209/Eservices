@@ -19,7 +19,7 @@ const AllOrdersComponent = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/user/orders',{
+        const response = await axios.get('https://learnhub-eservices.onrender.com/api/user/orders',{
             headers:{
               'Content-Type':'appliaction/json',
               'Authorization':auth?.token
