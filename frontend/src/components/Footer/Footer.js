@@ -15,8 +15,8 @@ const Footer = () => {
      <hr/>
      <div className="pages-container">
       <ul style={{listStyle:'none',fontSize:'14px',display:'flex'}}>
-        <a href="/contact" className='link'> <li>Contact Us</li></a>
-        <a href="/about" className='link'> <li>About Us</li></a>
+        {/* <a href="/contact" className='link'> <li>Contact Us</li></a> */}
+        <a href="/about" className='link'> <li>About</li></a>
         <a href="/" className='link' ><li>LearnHub</li></a>
         <a href="/blog" className='link'><li>Blog</li></a>
         

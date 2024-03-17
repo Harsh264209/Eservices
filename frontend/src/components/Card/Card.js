@@ -26,7 +26,9 @@ const Card = ({title,description,price,imageUrl,card,rating}) => {
           <h4 className="card-price">Rs.{price}</h4>
           <button className='cart-btn' onClick={()=>{setCart([...cart,card])
             localStorage.setItem('cart',JSON.stringify([...cart,card]))
-            toast.success("Item Added To cart")
+            toast.success("Item Added To cart",{
+              autoClose:1000
+            })
           }} >
             Add To Cart
           </button>

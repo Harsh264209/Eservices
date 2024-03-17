@@ -34,13 +34,14 @@
 .pages-container{
     display: flex;
     flex-direction:row;
-    margin-left: -30;
+    margin-left: 0px;
 }
 .footer-paragraph-text{
     color: rgb(110, 112, 112);
 }
 .link{
     text-decoration: none;
+    color: black !important;
 }
 
 @media only screen and (max-width: 420px){

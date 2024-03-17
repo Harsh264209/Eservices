@@ -15,9 +15,7 @@ const HomePage = () => {
        <h1 id='heading-text'>How does <span className='highlighter- wd_highlight1'>LearnHub work?</span></h1>
        <div className='main-container'>
   
-        <div className='home-img-container'>
-            <img className='img' src="https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg?size=626&ext=jpg&ga=GA1.1.537376815.1669047175&semt=ais" alt="" />
-        </div>
+       
         <div className='text-container'>
             <h1 id='sub-heading-text' >Getting started with</h1>
             <p id='paragraph-text'> As a new learner, you can easily start using <br/>
@@ -28,6 +26,9 @@ const HomePage = () => {
             
             <button className='learn-btn' onClick={()=>Navigate('/about')}>Learn More</button>
          
+        </div>
+        <div className='home-img-container'>
+            <img className='img' src="https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg?size=626&ext=jpg&ga=GA1.1.537376815.1669047175&semt=ais" alt="" />
         </div>
        </div>
     </div>

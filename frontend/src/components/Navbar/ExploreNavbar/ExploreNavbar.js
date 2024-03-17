@@ -282,6 +282,8 @@
 
 
 import React, { useState } from 'react';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 // import {Link} from 'react-scroll'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCart';
@@ -299,6 +301,8 @@ const ExploreNavbar = () => {
   const [values, setValues] = useSearch();
   const [anchorElNav, setAnchorElNav] = useState(null);
 
+  const navigate=useNavigate()
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -309,6 +313,21 @@ const ExploreNavbar = () => {
 
   const handleSearchChange = (event) => {
     setValues({ ...values, keyword: event.target.value });
+  };
+
+    const handleSearchSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await axios.get(
+        `https://learnhub-eservices.onrender.com/api/course/search/${values.keyword}`
+      );
+
+      setValues({ ...values, results: data });
+      console.log(data);
+      navigate('/search');
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const pages = ['Home', 'About', 'Blog',]; // Define your pages here
@@ -404,7 +423,8 @@ const ExploreNavbar = () => {
 
           
       {/* Search Input Bar (visible only on small screens) */}
-      <Box sx={{ display: { xs: 'block', md: 'block' } }}>
+      <Box sx={{ display: { xs: 'block', md: 'block' } }} >
+        <form action="" onSubmit={handleSearchSubmit}>
         <div className="search-container">
           <input
             type="text"
@@ -415,6 +435,8 @@ const ExploreNavbar = () => {
           />
           <button className="nav-search-btn">Search</button>
         </div>
+        </form>
+      
       </Box>
 
       {/* Cart Icon (visible only on small screens) */}

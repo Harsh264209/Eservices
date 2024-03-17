@@ -209,7 +209,7 @@ function ResponsiveAppBar() {
             </>
           ) : (
             <>
-              <Button className='register-btn' color="inherit" onClick={() => Navigate('/register')} sx={{ backgroundColor: "none", padding: "10px 16px", border: "1px solid black", borderRadius: "16px", fontWeight: "600", marginRight: "6px", textTransform: "capitalize",fontFamily:'Poppins' }} >
+              <Button className='register-btn' color="inherit" onClick={() => Navigate('/register')} sx={{ backgroundColor: "none", padding: "10px 16px", border: "1px solid black", borderRadius: "16px",fontWeight: "600", marginRight: "6px", textTransform: "capitalize",fontFamily:'Poppins' }} >
                 Register
               </Button>
               <Button className='login-btn' onClick={handleLogin} color="inherit" sx={{ backgroundColor: "none", padding: "10px 16px", border: "1px solid black", borderRadius: "16px", fontWeight: "600", textTransform: "capitalize",fontFamily:'Poppins' }} >

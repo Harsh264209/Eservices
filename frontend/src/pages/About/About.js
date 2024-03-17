@@ -24,9 +24,9 @@ const About = () => {
         </div>
        </div>
 
-       <div className="about-hero-text" style={{marginTop:'50px'}}>
+       <div className="about-hero-text" style={{marginTop:'50px',padding:'0px 140px'}}>
        {/* <p>Getting started with LearnHub is easy – even if you're new to online learning.<br/> Once you've created an account and logged in, you can begin browsing<br/> through our extensive collection of courses. With just a few clicks,<br/> you can enroll in the courses that interest you most. It's that simple!</p> */}
-<div className="about-hero-main" style={{marginLeft:'30px',marginTop:'30px'}}>
+<div className="about-hero-main" style={{marginLeft:'0px',marginTop:'30px'}}>
 <h2>Why Choose LearnHub?</h2>
 <ul>
   <li>Seamless Learning Experience: Our platform is built with a user-friendly interface, making it easy<br/> for learners to navigate and access their courses. Whether you're accessing LearnHub from your computer,<br/> tablet, or smartphone, you can enjoy a seamless learning experience every time.</li>
@@ -46,7 +46,7 @@ const About = () => {
         <h1>Join the LearnHub Community Today!</h1>
         <p>Join the millions of learners who have already chosen LearnHub as their preferred<br/> platform for online learning. Whether you're looking to acquire new skills, advance your career, or<br/> simply pursue your passions, LearnHub is here to help you achieve your goals.</p>
         <p>Empower yourself with knowledge and take your learning journey to new heights with<br/> LearnHub. Get started today and unlock a world of opportunities!</p>
-        <img style={{width:'150px',marginLeft:'200px'}} src="https://img.freepik.com/free-vector/thank-you-concept-illustration_114360-13427.jpg?w=996&t=st=1708286157~exp=1708286757~hmac=7ce1fc62e7ed93aa1481bf8e0e0037ea2b077c1a90358c51a38825227a50310b" alt="" />
+        <img style={{width:'180px',marginLeft:'170px',marginBottom:'30px'}} src="https://img.freepik.com/free-vector/thank-you-concept-illustration_114360-13427.jpg?w=996&t=st=1708286157~exp=1708286757~hmac=7ce1fc62e7ed93aa1481bf8e0e0037ea2b077c1a90358c51a38825227a50310b" alt="" />
        </div>
        <Footer/>
     </div>

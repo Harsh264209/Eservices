@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content:space-around;
     align-items: center;
+    padding:0px 120px;
 }
 #heading-text{
    letter-spacing: .1rem;
@@ -11,7 +12,7 @@
     line-height: 1.2;
     margin: 0px auto;
     text-align: center;
-    margin-top: 110px;
+    margin-top: 150px;
     margin-bottom: 20px;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
@@ -52,13 +53,14 @@
 }
 .home-img-container{
     width: 520px;
+    
 }
 .img{
     width: 100%;
 }
 .text-container{
-    margin-bottom: 40px;
-    margin-left: 20px;
+    margin-top:20px;
+    /* margin-left: 40px; */
 }
 
 /* CSS for mobile screens */
@@ -68,10 +70,12 @@
     .main-container{
         display: flex;
         width: 100%;
-        flex-direction: column;
+        flex-wrap: wrap-reverse;
+        /* flex-direction: column; */
         justify-content: center;
         align-items: center;
         margin-bottom: 18px;
+        padding: 0px;
     }
 
     .home-img-container{
